@@ -1,0 +1,28 @@
+# Node.js
+node_modules/
+.env
+dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# VS Code
+.vscode/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Vite
+.vite/
+
+# IDEs (caso use outras)
+.idea/
+*.swp
+*.swo
+*.bak
+
+# Coverage (caso use testes)
+coverage/
