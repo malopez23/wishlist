@@ -1,7 +1,7 @@
 // components/ProductForm.tsx
 import { useState } from "react";
 import type { Category, Product } from "../types/Product";
-import { Save, X } from "lucide-react";
+import { Save, X, Image as ImageIcon } from "lucide-react";
 
 interface ProductFormProps {
     onAdd: (product: Product) => void;
@@ -58,6 +58,17 @@ const ProductForm = ({ onAdd, initialData, onClose }: ProductFormProps) => {
         }
     };
 
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setImage(reader.result as string);
+            };
+            reader.readAsDataURL(file);
+        }
+    };
+
     return (
         <><form onSubmit={handleSubmit} className="bg-gray-900 p-6 rounded-xl space-y-4 max-w-2xl mx-auto mb-10">
             <h2 className="text-2xl font-semibold text-white">Adicionar Produto</h2>
@@ -81,8 +92,45 @@ const ProductForm = ({ onAdd, initialData, onClose }: ProductFormProps) => {
 
             <div className="flex flex-col">
                 <label htmlFor="imageUrl" className="text-gray-300 mb-1">URL da imagem</label>
-                <input id="imageUrl" className="input w-full" name="imageUrl" placeholder="URL da imagem" value={imageUrl} onChange={handleImageChange} />
+                <input
+                    id="imageUrl"
+                    className="input w-full"
+                    name="imageUrl"
+                    placeholder="URL da imagem"
+                    value={imageUrl}
+                    onChange={handleImageChange}
+                    type="url"
+                />
             </div>
+
+            <div className="flex flex-col">
+                <label htmlFor="imageFile" className="text-gray-300 mb-1">Ou selecione uma imagem do seu dispositivo</label>
+                <label
+                    htmlFor="imageFile"
+                    className="flex items-center gap-2 input w-full bg-gray-800 text-white cursor-pointer py-6 justify-center"
+                    style={{ minHeight: "56px" }}
+                >
+                    <ImageIcon className="w-6 h-6 text-purple-400" />
+                    <span className="text-gray-400">Escolher imagem do dispositivo</span>
+                    <input
+                        id="imageFile"
+                        type="file"
+                        accept="image/*"
+                        className="hidden"
+                        onChange={handleFileChange}
+                    />
+                </label>
+            </div>
+
+            {imageUrl && (
+                <div className="flex justify-center my-2">
+                    <img
+                        src={imageUrl}
+                        alt="Prévia"
+                        className="max-h-32 rounded-lg border border-gray-700"
+                    />
+                </div>
+            )}
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div className="flex flex-col flex-1">

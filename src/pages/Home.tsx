@@ -131,7 +131,7 @@ const Home = () => {
           )}
         </div>
         <select
-          className="p-2 rounded-lg bg-gray-800 text-white"
+          className="p-2 rounded-lg bg-gray-800 text-white cursor-pointer"
           value={filterCategory}
           onChange={e => setFilterCategory(e.target.value)}
         >
@@ -144,7 +144,7 @@ const Home = () => {
           <option value="Outros">Outros</option>
         </select>
         <select
-          className="p-2 rounded-lg bg-gray-800 text-white"
+          className="p-2 rounded-lg bg-gray-800 text-white cursor-pointer"
           value={filterPriority}
           onChange={e => setFilterPriority(e.target.value)}
         >
@@ -154,7 +154,7 @@ const Home = () => {
           <option value="Baixa">Baixa</option>
         </select>
         <select
-          className="p-2 rounded-lg bg-gray-800 text-white"
+          className="p-2 rounded-lg bg-gray-800 text-white cursor-pointer"
           value={sortPrice}
           onChange={e => setSortPrice(e.target.value)}
         >
@@ -229,7 +229,7 @@ const Home = () => {
 
             <button
               onClick={() => setShowForm(true)}
-              className="w-full bg-purple-600 hover:bg-purple-700 transition rounded-xl py-3 font-semibold flex items-center justify-center gap-2"
+              className="w-full bg-purple-600 hover:bg-purple-700 transition rounded-xl py-3 font-semibold flex items-center justify-center gap-2 cursor-pointer"
             >
               <ShoppingCart className="w-5 h-5" />
               Adicionar Novo Item
