@@ -58,11 +58,11 @@ const ProductForm: React.FC<Props> = ({ onAdd }) => {
             {/* Nome e Preço lado a lado */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div className="flex flex-col">
-                    <label htmlFor="name" className="text-gray-300 mb-1 font-bold">Nome*</label>
+                    <label htmlFor="name" className="text-gray-300 mb-1">Nome*</label>
                     <input id="name" className="input" name="name" placeholder="Ex: Playstation 5" value={form.name} onChange={handleChange} required />
                 </div>
                 <div className="flex flex-col">
-                    <label htmlFor="price" className="text-gray-300 mb-1 font-bold">Preço*</label>
+                    <label htmlFor="price" className="text-gray-300 mb-1">Preço*</label>
                     <input id="price" className="input appearance-none" name="price" placeholder="R$ 0,00" type="number" value={form.price} onChange={handleChange} required />
                 </div>
             </div>
