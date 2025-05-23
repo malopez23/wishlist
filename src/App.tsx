@@ -1,9 +1,10 @@
 import './index.css'
+import Home from './pages/Home';
 
 function App() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white">
-      <h1 className="text-4xl font-bold">DesejosList 🚀</h1>
+    <div className='bg-gray-900 min-h-screen text-white'>
+      <Home />
     </div>
   );
 }
