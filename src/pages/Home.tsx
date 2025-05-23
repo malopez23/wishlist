@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 import ProductForm from "../components/ProductForm";
 import Modal from "../components/Modal";
-import { mockProducts } from "../data/mockProducts";
+// import { mockProducts } from "../data/mockProducts";
 import type { Product } from "../types/Product";
 import { Heart, CirclePlus, House, ShoppingCart, TrendingUp } from "lucide-react";
 
 const Home = () => {
-  const [products, setProducts] = useState<Product[]>(mockProducts);
+  const [products, setProducts] = useState<Product[]>([]);
   const [showForm, setShowForm] = useState(false);
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
