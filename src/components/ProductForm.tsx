@@ -14,8 +14,8 @@ const ProductForm: React.FC<Props> = ({ onAdd }) => {
         description: "",
         imageUrl: "",
         link: "",
-        category: "Eletrônicos",
-        priority: "Média",
+        category: "Outros",
+        priority: "Baixa",
     });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
