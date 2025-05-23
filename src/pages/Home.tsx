@@ -165,7 +165,6 @@ const Home = () => {
       </div>
 
       <div className="flex flex-col md:flex-row gap-6">
-        {/* Produtos à esquerda */}
         <div className="flex-1 min-w-0">
           <Modal isOpen={showForm} onClose={() => { setShowForm(false); setEditingProduct(null); }}>
             <ProductForm
@@ -196,7 +195,6 @@ const Home = () => {
           )}
         </div>
 
-        {/* Card de resumo à direita */}
         <div className="w-full md:w-80">
 
           <div className="rounded-2xl bg-gradient-to-br from-purple-900 to-gray-900 text-white p-6 shadow-[0_0_15px_rgba(168,85,247,0.3)] border-purple-800">
@@ -221,7 +219,7 @@ const Home = () => {
                 <TrendingUp className="inline w-4 h-4 mr-1"/>
                 Valor médio<br />
                 </div>
-                <span className="font-bold justify-end text-center">
+                <span className="font-bold justify-end text-start">
                   R$ {(totalProducts ? totalPrice / totalProducts : 0).toLocaleString("pt-BR", { minimumFractionDigits: 2 })}
                 </span>
               </div>
