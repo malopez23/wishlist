@@ -16,7 +16,7 @@ export const mockProducts: Product[] = [
     id: '2',
     name: 'Tênis Esportivo',
     price: 349.90,
-    description: 'Confortável e ideal para corridas',
+    description: 'Confortável e ideal para corridas de longa distância',
     imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTToY1AilYKaiwCqRJjM07Yhzb2jJRkPO3Pw&s',
     link: 'https://www.netshoes.com.br/p/tenis-masculino-corrida-advanced-run-academia-professional-ultra-leve-preto-0D2-1344-006',
     category: 'Esportes',
