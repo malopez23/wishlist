@@ -1,10 +1,13 @@
+import { Pencil, Trash } from "lucide-react";
 import type { Product } from "../types/Product";
 
-interface Props {
+interface ProductCardProps {
   product: Product;
+  onEdit: (product: Product) => void;
+  onDelete: (id: string) => void;
 }
 
-const ProductCard: React.FC<Props> = ({ product }) => {
+const ProductCard = ({ product, onEdit, onDelete }: ProductCardProps) => {
   return (
     <div className="bg-gray-800 rounded-2xl overflow-hidden shadow-lg transition hover:scale-105 hover:shadow-purple-500/40 duration-300 h-full flex flex-col">
       <img
@@ -27,11 +30,19 @@ const ProductCard: React.FC<Props> = ({ product }) => {
           <a
             href={product.link}
             target="_blank"
-            className="mt-2 inline-block bg-purple-600 hover:bg-purple-700 text-white text-sm px-4 py-2 rounded-full transition"
+            className="mt-2 inline-block bg-purple-600 hover:bg-purple-700 text-white text-sm px-4 py-2 rounded-xl transition duration-300"
           >
             Ver produto
           </a>
           </div>
+        </div>
+        <div className="flex justify-end mt-4 gap-3">
+          <button onClick={() => onEdit(product)} className="bg-gray-500 px-2 py-2 rounded-md cursor-pointer hover:bg-blue-500 transition duration-300" title="Editar">
+            <Pencil className="w-5 h-5" />
+          </button>
+          <button onClick={() => onDelete(product.id)} className="bg-gray-500 px-2 py-2 rounded-md cursor-pointer hover:bg-red-500 transition duration-300" title="Excluir">
+            <Trash className="w-5 h-5 cursor-pointer hover:" />
+          </button>
         </div>
       </div>
     </div>
