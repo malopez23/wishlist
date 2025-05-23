@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 import ProductForm from "../components/ProductForm";
 import Modal from "../components/Modal";
@@ -8,6 +8,14 @@ import { Heart, CirclePlus, House } from "lucide-react";
 
 
 const Home = () => {
+
+  useEffect(() => {
+    const storedProducts = localStorage.getItem("products");
+    if (storedProducts) {
+      setProducts(JSON.parse(storedProducts));
+    }
+  }, []);
+
   const [products, setProducts] = useState<Product[]>(mockProducts);
   const [showForm, setShowForm] = useState(false);
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
