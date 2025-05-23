@@ -4,6 +4,8 @@ import ProductForm from "../components/ProductForm";
 import Modal from "../components/Modal";
 import { mockProducts } from "../data/mockProducts";
 import type { Product } from "../types/Product";
+import { Heart } from "lucide-react";
+import { CirclePlus } from "lucide-react";
 
 const Home = () => {
   const [products, setProducts] = useState<Product[]>(mockProducts);
@@ -17,11 +19,15 @@ const Home = () => {
   return (
     <div className="p-6 max-w-6xl mx-auto">
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-3xl font-bold text-white">Minha Lista de Desejos</h2>
+        <h2 className="text-3xl font-bold text-white flex items-center gap-2">
+        <Heart className="w-8 h-8 text-purple-600" />
+          WishList
+        </h2>
         <button
           onClick={() => setShowForm(true)}
-          className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg"
+          className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg cursor-pointer flex items-center"
         >
+          <CirclePlus className="w-4 h-4 mr-2" />
           Adicionar Produto
         </button>
       </div>
