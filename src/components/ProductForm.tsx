@@ -70,7 +70,8 @@ const ProductForm = ({ onAdd, initialData, onClose }: ProductFormProps) => {
     };
 
     return (
-        <><form onSubmit={handleSubmit} className="bg-gray-900 p-6 rounded-xl space-y-4 max-w-2xl mx-auto mb-10">
+        <>
+        <form onSubmit={handleSubmit} className="bg-gray-900 p-6 rounded-xl space-y-4 max-w-2xl mx-auto mb-10 ">
             <h2 className="text-2xl font-semibold text-white">Adicionar Produto</h2>
             <hr className="border-gray-700 mb-4" />
 
@@ -86,12 +87,12 @@ const ProductForm = ({ onAdd, initialData, onClose }: ProductFormProps) => {
             </div>
 
             <div className="flex flex-col">
-                <label htmlFor="link" className="text-gray-300 mb-1">Link do produto</label>
+                <label htmlFor="link" className="text-gray-300 mb-1">Link do produto*</label>
                 <input id="link" className="input w-full" name="link" placeholder="Link do produto" value={link} onChange={handleLinkChange} />
             </div>
 
             <div className="flex flex-col">
-                <label htmlFor="imageUrl" className="text-gray-300 mb-1">URL da imagem</label>
+                <label htmlFor="imageUrl" className="text-gray-300 mb-1">URL da imagem*</label>
                 <input
                     id="imageUrl"
                     className="input w-full"
@@ -104,7 +105,7 @@ const ProductForm = ({ onAdd, initialData, onClose }: ProductFormProps) => {
             </div>
 
             <div className="flex flex-col">
-                <label htmlFor="imageFile" className="text-gray-300 mb-1">Ou selecione uma imagem do seu dispositivo</label>
+                <label htmlFor="imageFile" className="text-gray-300 mb-1">Selecione do dispositivo*</label>
                 <label
                     htmlFor="imageFile"
                     className="flex items-center gap-2 input w-full bg-gray-800 text-white cursor-pointer py-6 justify-center"
@@ -134,7 +135,7 @@ const ProductForm = ({ onAdd, initialData, onClose }: ProductFormProps) => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div className="flex flex-col flex-1">
-                    <label htmlFor="category" className="text-gray-300 mb-1">Categoria</label>
+                    <label htmlFor="category" className="text-gray-300 mb-1">Categoria*</label>
                     <select
                         id="category"
                         className="input"
@@ -143,7 +144,7 @@ const ProductForm = ({ onAdd, initialData, onClose }: ProductFormProps) => {
                         onChange={handleCategoryChange}
                     >
                         <option>Eletrônicos</option>
-                        <option>Moda</option>
+                        <option>Roupas</option>
                         <option>Casa</option>
                         <option>Esportes</option>
                         <option>Livros</option>
@@ -151,7 +152,7 @@ const ProductForm = ({ onAdd, initialData, onClose }: ProductFormProps) => {
                     </select>
                 </div>
                 <div className="flex flex-col flex-1">
-                    <label htmlFor="priority" className="text-gray-300 mb-1">Prioridade</label>
+                    <label htmlFor="priority" className="text-gray-300 mb-1">Prioridade*</label>
                     <select
                         id="priority"
                         className="input"
@@ -166,7 +167,7 @@ const ProductForm = ({ onAdd, initialData, onClose }: ProductFormProps) => {
                 </div>
             </div>
             <div className="flex flex-col">
-                <label htmlFor="description" className="text-gray-300 mb-1">Descrição</label>
+                <label htmlFor="description" className="text-gray-300 mb-1">Descrição*</label>
                 <textarea id="description" className="input w-full" name="description" placeholder="Descreva o produto..." value={description} onChange={handleDescriptionChange} />
             </div><div className="flex justify-end gap-4 mt-4">
                 <button

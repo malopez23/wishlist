@@ -93,7 +93,7 @@ const Home = () => {
           </h2>
         </div>
         <div className="flex items-center gap-4">
-          <House />
+          <House className="sr-only sm:not-sr-only"/>
           <button
             onClick={() => setShowForm(true)}
             className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg cursor-pointer flex items-center"
@@ -106,7 +106,7 @@ const Home = () => {
 
       <hr className="border-gray-700 mb-8" />
 
-      <div className="flex gap-3 mb-4">
+      <div className="flex gap-3 mb-4 sm:flex-row flex-col">
         <div className="relative w-full">
           <input
             type="text"
