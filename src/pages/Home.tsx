@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 import ProductForm from "../components/ProductForm";
-import Modal from "../components/Modal";
 // import { mockProducts } from "../data/mockProducts";
 import type { Product } from "../types/Product";
 import { Heart, CirclePlus, House, ShoppingCart, TrendingUp } from "lucide-react";
@@ -166,21 +165,14 @@ const Home = () => {
 
       <div className="flex flex-col md:flex-row gap-6">
         <div className="flex-1 min-w-0">
-          <Modal isOpen={showForm} onClose={() => { setShowForm(false); setEditingProduct(null); }}>
-            <ProductForm
-              onAdd={handleAddProduct}
-              initialData={editingProduct}
-              onClose={() => { setShowForm(false); setEditingProduct(null); }}
-            />
-          </Modal>
-
+          {/* Lista de produtos */}
           {filteredProducts.length === 0 ? (
             <div className="flex flex-col justify-center items-center h-60">
               <Heart className="text-gray-500 w-20 h-20" />
-              <p className="text-gray-500 mt-8 text-xl font-bold">
+              <p className="text-gray-500 mt-8 text-xl font-bold max-sm:text-center">
                 Ainda não existem produtos cadastrados
               </p>
-            </div>      
+            </div>
           ) : (
             <div className="grid w-full gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 mt-8">
               {sortedProducts.map(product => (
@@ -196,7 +188,6 @@ const Home = () => {
         </div>
 
         <div className="w-full md:w-80">
-
           <div className="rounded-2xl bg-gradient-to-br from-purple-900 to-gray-900 text-white p-6 shadow-[0_0_15px_rgba(168,85,247,0.3)] border-purple-800">
             <div className="flex items-center justify-between mb-4">
               <span className="font-bold text-lg">Total da Lista</span>
@@ -235,6 +226,19 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+      {/* Modal customizado */}
+      {showForm && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+          <div className="bg-gray-900 rounded-xl p-4 w-full max-w-lg mx-2 shadow-2xl relative max-h-[90vh] overflow-y-auto md:max-h-none md:overflow-visible">
+            <ProductForm
+              onAdd={handleAddProduct}
+              initialData={editingProduct}
+              onClose={() => { setShowForm(false); setEditingProduct(null); }}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

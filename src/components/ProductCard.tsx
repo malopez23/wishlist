@@ -13,7 +13,7 @@ const ProductCard = ({ product, onEdit, onDelete }: ProductCardProps) => {
       <img
         src={product.imageUrl}
         alt={product.name}
-        className="w-full h-48 object-cover"
+        className="w-full h-56 sm:h-64 md:h-48 object-cover"
       />
       <div className="p-4 space-y-2 flex flex-col flex-1">
         <h3 className="text-xl font-bold text-white">{product.name}</h3>
