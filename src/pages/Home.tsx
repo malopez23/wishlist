@@ -130,7 +130,7 @@ const Home = () => {
           )}
         </div>
         <select
-          className="p-2 rounded-lg bg-gray-800 text-white cursor-pointer"
+          className="p-2 rounded-lg bg-gray-800 text-white cursor-pointer sm:max-md:p-8"
           value={filterCategory}
           onChange={e => setFilterCategory(e.target.value)}
         >

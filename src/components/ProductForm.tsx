@@ -39,9 +39,9 @@ const ProductForm = ({ onAdd, initialData, onClose }: ProductFormProps) => {
             description,
             price: parseFloat(price),
             imageUrl,
-            link,         // Corrigido: usar o estado atual
-            category,     // Corrigido: usar o estado atual
-            priority,     // Corrigido: usar o estado atual
+            link,         
+            category,     
+            priority,     
             createdAt: initialData?.createdAt || new Date(),
         };
 
@@ -52,9 +52,9 @@ const ProductForm = ({ onAdd, initialData, onClose }: ProductFormProps) => {
             setDescription("");
             setPrice("");
             setImage("");
-            setLink("");         // Corrigido: limpar campo link
-            setCategory("Outros"); // Corrigido: resetar categoria
-            setPriority("Média");  // Corrigido: resetar prioridade
+            setLink("");         
+            setCategory("Outros"); 
+            setPriority("Média");  
         }
     };
 
@@ -138,7 +138,7 @@ const ProductForm = ({ onAdd, initialData, onClose }: ProductFormProps) => {
                     <label htmlFor="category" className="text-gray-300 mb-1">Categoria*</label>
                     <select
                         id="category"
-                        className="input"
+                        className="input py-4"
                         name="category"
                         value={category}
                         onChange={handleCategoryChange}
